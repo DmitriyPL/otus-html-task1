@@ -8,22 +8,53 @@
 }
 
 /* Protection from user settings */
+/* Screen limitation */
 body {
   background-color: white;
-}
-
-/* Screen limitation */
-main {
   max-width: 90rem;
   min-width: 45rem;
   margin: 0 auto;
 }
 
-.flex-container {
+header {
   display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
 }
 
-section {
-  border: 3px;
-  border-color: red;
+footer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.flex-container-main {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.header-col {
+  width: calc((100% - 100px) / 2);
+  padding: 10px;
+}
+
+.main-col {
+  width: calc((100% - 100px) / 3);
+  padding: 10px;
+}
+
+.footer-col {
+  width: calc((100% - 100px) / 4);
+  padding: 10px;
+}
+
+@media screen and (max-width: 800px) {
+  .flex-container-main,
+  header,
+  footer {
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-around;
+  }
 }
